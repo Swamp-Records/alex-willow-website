@@ -31,4 +31,4 @@ Instagram (Alex Willow): https://www.instagram.com/alexwillowmusic/?hl=en
 
 Swamp Records Website: https://www.swamprecords.org/
 
- ### Developed By: Jess Anderson, Kushagra Katiyar, Adela Mikes,  Angelina Wu, Kalina Triggs, and Giovana Mitsunaga
+Developed By: Jess Anderson, Kushagra Katiyar, Adela Mikes,  Angelina Wu, Kalina Triggs, and Giovana Mitsunaga
