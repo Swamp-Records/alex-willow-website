@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Swamp Records x Alex Willow 
+This is a Next.js project built for Gainesville-based music artist Alex Willow. Devloped in collabroation with Swamp Records, this platform is designed to serve as a central hub for advertising merch, promoing new music, EPKs, and engaging fans. 
 
-## Getting Started
+## Project
+The goal of this platform is to provide a professional digital space that reflects Alex Willow's artistic identity. Key sections of the site include:
 
-First, run the development server:
+Merch Display: A showcase for limited edition apparel and physical goods.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Music Portfolio: Integrated links to streaming services and latest tracks.
+
+Artist Presence: Information about Alex's roots in Gainesville and ongoing projects with Swamp Records.
+
+## Setup
 ```
+npm install 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+npm run dev
+```
+opens in http://localhost:3000 on a browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
+ - Next.js
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contributers:
+See 'Branch Strategy' under Contribution tab.
 
-## Learn More
+## Contact
+Spotify (Alex Willow): https://open.spotify.com/artist/73etH0gcHNOnWLXD0Rbamb?si=Uf_Gsml3Ry-m6xYeyZE5eQ
 
-To learn more about Next.js, take a look at the following resources:
+Instagram (Alex Willow): https://www.instagram.com/alexwillowmusic/?hl=en
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Swamp Records Website: https://www.swamprecords.org/
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ ### Developed By: Jess Anderson, Kushagra Katiyar, Adela Mikes,  Angelina Wu, Kalina Triggs, and Giovana Mitsunaga
