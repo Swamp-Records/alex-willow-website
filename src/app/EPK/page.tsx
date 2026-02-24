@@ -1,10 +1,15 @@
+import NavBar from "../NavBar"
 
 
 
 export default function EPK(){
     return (
         <>
-        <h1>EPK</h1>
+        <NavBar/>
+        <div className="flex items-center justify-center min-h-screen">
+             <h1>EPK</h1>
+        </div>
+        
         </>
     )
 }
