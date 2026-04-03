@@ -1,14 +1,11 @@
 "use client";
 import Image from "next/image";
-import NavBar from "./NavBar";
 
 export default function HeroSection() {
   return (
     <section className="hero-section">
       {/* Background */}
       <div className="hero-bg" />
-
-      <NavBar />
 
       {/* Hero content */}
       <div className="hero-content">
@@ -20,19 +17,16 @@ export default function HeroSection() {
           {/* Left polaroid */}
           <div className="polaroid polaroid-left">
             <div className="polaroid-photo" />
-            <span className="polaroid-caption">Willow</span>
           </div>
 
           {/* Center polaroid */}
           <div className="polaroid polaroid-center">
             <div className="polaroid-photo" />
-            <span className="polaroid-caption">Willow</span>
           </div>
 
           {/* Right polaroid */}
           <div className="polaroid polaroid-right">
             <div className="polaroid-photo" />
-            <span className="polaroid-caption">Willow</span>
           </div>
 
         </div>
@@ -76,10 +70,11 @@ export default function HeroSection() {
         /* TITLE */
         .hero-title {
           font-family: "Lavishly Yours";
-          font-size: 160px;
+          font-size: clamp(60px, 10vw, 160px);
           font-style: normal;
           font-weight: 400;
           line-height: normal;
+          text-align: center;
         }
 
         /* POLAROID CLUSTER */
@@ -94,7 +89,7 @@ export default function HeroSection() {
           background: #f5efe0;
           padding: 8px 8px 32px;
           box-shadow: 3px 5px 18px rgba(0,0,0,0.4);
-          width: 130px;
+          width: 150px;
           position: relative;
           transition: transform 0.3s ease, z-index 0s;
           flex-shrink: 0;
