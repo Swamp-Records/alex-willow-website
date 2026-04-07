@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Lavishly_Yours} from "next/font/google";
+import { Geist, Geist_Mono, Lavishly_Yours, Licorice, Kurale
+} from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -18,6 +19,18 @@ const geistMono = Geist_Mono({
 
 const lavishlyYours = Lavishly_Yours({
   variable: "--font-lavishly-yours",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const licorice = Licorice({
+  variable: "--font-licorice",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const kurale = Kurale({
+  variable: "--font-kurale",
   subsets: ["latin"],
   weight: "400",
 });

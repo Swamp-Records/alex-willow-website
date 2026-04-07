@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation";
 
 import Instagram from "../../../public/Instagram.svg"
 import Mail from "../../../public/Mail.svg"
@@ -12,9 +13,10 @@ import Logo from "../../../public/AlexWillowLogo.png"
 
 export default function NavBar() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname();
 
   return (
-    <nav className="absolute top-0 left-0 w-full z-50 px-6 md:px-10 py-6 text-white">
+    <nav className="absolute top-0 left-0 w-full z-50 px-6 md:px-10 py-6 text-white font-kurale">
       
       <div className="flex items-center justify-between">
         
@@ -31,12 +33,12 @@ export default function NavBar() {
             </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex gap-8 text-lg nav-links">
-            <Link href="/">Home</Link>
-            <Link href="/EPK">EPK</Link>
-            <Link href="/shows">Show Dates</Link>
-            <Link href="/contact">Contact</Link>
-            <Link href="/lyrics">Lyrics</Link>
+          <div className="hidden md:flex gap-8 text-xl nav-links">
+            <Link href="/" className={`${pathname === "/" ? "underline" : ""} hover:text-[#4F6A89] transition-colors duration-200`}>Home</Link>
+            <Link href="/EPK" className={`${pathname === "/EPK" ? "underline" : ""} hover:text-[#4F6A89] transition-colors duration-200`}>EPK</Link>
+            <Link href="/shows" className={`${pathname === "/shows" ? "underline" : ""} hover:text-[#4F6A89] transition-colors duration-200`}>Show Dates</Link>
+            <Link href="/contact" className={`${pathname === "/contact" ? "underline" : ""} hover:text-[#4F6A89] transition-colors duration-200`}>Contact</Link>
+            <Link href="/lyrics" className={`${pathname === "/lyrics" ? "underline" : ""} hover:text-[#4F6A89] transition-colors duration-200`}>Lyrics</Link>
           </div>
         </div>
 
@@ -69,7 +71,7 @@ export default function NavBar() {
       {open && (
         <div className="md:hidden mt-4 flex flex-col gap-4 bg-black/80 backdrop-blur-md p-6 rounded-xl nav-links">
           <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-          <Link href="/EPK" onClick={() => setOpen(false)}>EPK</Link>
+          <Link href="/EPK" onClick={() => setOpen(false)} >EPK</Link>
           <Link href="/shows" onClick={() => setOpen(false)}>Show Dates</Link>
           <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
           <Link href="/lyrics" onClick={() => setOpen(false)}>Lyrics</Link>
