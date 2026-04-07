@@ -20,13 +20,15 @@ export default function NavBar() {
         
         {/* LEFT */}
         <div className="flex items-center gap-6 md:gap-12">
-          <Image 
-            src={Logo} 
-            height={60} 
-            width={60} 
-            alt="Logo"
-            className="transition-transform duration-300 hover:scale-110 hover:rotate-3"
-          />
+            <Link href="/" onClick={() => setOpen(false)}>
+                <Image 
+                    src={Logo} 
+                    height={60} 
+                    width={60} 
+                    alt="Logo"
+                    className="transition-transform duration-300 hover:scale-110 hover:rotate-3"
+                />
+            </Link>
 
           {/* Desktop Links */}
           <div className="hidden md:flex gap-8 text-lg nav-links">
@@ -34,6 +36,7 @@ export default function NavBar() {
             <Link href="/EPK">EPK</Link>
             <Link href="/shows">Show Dates</Link>
             <Link href="/contact">Contact</Link>
+            <Link href="/lyrics">Lyrics</Link>
           </div>
         </div>
 
@@ -65,10 +68,11 @@ export default function NavBar() {
       {/* Mobile Dropdown */}
       {open && (
         <div className="md:hidden mt-4 flex flex-col gap-4 bg-black/80 backdrop-blur-md p-6 rounded-xl nav-links">
-          <Link href="/">Home</Link>
-          <Link href="/EPK">EPK</Link>
-          <Link href="/shows">Show Dates</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/" onClick={() => setOpen(false)}>Home</Link>
+          <Link href="/EPK" onClick={() => setOpen(false)}>EPK</Link>
+          <Link href="/shows" onClick={() => setOpen(false)}>Show Dates</Link>
+          <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
+          <Link href="/lyrics" onClick={() => setOpen(false)}>Lyrics</Link>
 
           <div className="flex gap-4 pt-4">
             <Image src={Spotify} height={24} width={24} alt="Spotify"/>
