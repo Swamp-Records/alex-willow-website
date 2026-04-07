@@ -3,6 +3,7 @@
 :root {
   --greygreen: #94b39d;
   --lightblue: #d2e6ff;
+  --offwhite: #D8D1C8;
   --navyblue: #2e2d6a;
   --lightbrown: #96715b;
   --darkbrown:#2f211c;
@@ -10,18 +11,29 @@
 
 @theme inline {
   --font-sans: var(--font-geist-sans);
+  --font-kurale: var(--font-kurale);
   --font-mono: var(--font-geist-mono);
   --color-greygreen: var(--greygreen);
   --color-lightblue: var(--lightblue);
   --color-navyblue: var(--navyblue);
   --color-lightbrown: var(--lightbrown);
   --color-darkbrown: var(--darkbrown);
+  --color-offwhite: var(--offwhite);
+  
 }
 
 
+html {
+  min-height: 100%;
+}
 
 body {
-  background: var(--darkbrown);
+  background-image: url('/NotebookLines.png');
+  background-repeat: repeat;
+  min-height: 100%;
+  background-size: auto;
+  background-color: var(--offwhite);
+  background-blend-mode: darken;
   color: var(--lightblue);
-  font-family: Arial, Helvetica, sans-serif;
+
 }

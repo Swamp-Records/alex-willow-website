@@ -1,10 +1,10 @@
 import Link from "next/link"
 import Image from "next/image"
-import Instagram from "../../../public/Instagram.svg"
-import Mail from "../../../public/Mail.svg"
-import Spotify from "../../../public/Spotify.svg"
-import Youtube from "../../../public/Youtube.svg"
-import Logo from "../../../public/AlexWillowLogo.png"
+import Instagram from "../../public/Instagram.svg"
+import Mail from "../../public/Mail.svg"
+import Spotify from "../../public/Spotify.svg"
+import Youtube from "../../public/Youtube.svg"
+import Logo from "../../public/AlexWillowLogo.png"
 
 export default function NavBar() {
     return (
@@ -23,6 +23,7 @@ export default function NavBar() {
                 <div className="flex gap-8 text-lg font-medium">
                     <Link className="hover:underline decoration-1 underline-offset-8" href="/">Home</Link>
                     <Link className="hover:underline decoration-1 underline-offset-8" href="/EPK">EPK</Link>
+                    <Link className="hover:underline decoration-1 underline-offset-8" href="/lyrics">Lyrics</Link>
                     <Link className="hover:underline decoration-1 underline-offset-8" href="/shows">Show Dates</Link>
                     <Link className="hover:underline decoration-1 underline-offset-8" href="/contact">Contact</Link>
                 </div>
