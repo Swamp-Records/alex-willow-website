@@ -47,7 +47,7 @@ export default function NavBar() {
           <Link href="https://open.spotify.com/artist/73etH0gcHNOnWLXD0Rbamb" target="_blank">
             <Image src={Spotify} height={26} width={26} alt="Spotify"/>
           </Link>
-          <Link href="mailto:your@email.com">
+          <Link href="mailto:alexwillowmusic@gmail.com">
             <Image src={Mail} height={26} width={26} alt="Mail"/>
           </Link>
           <Link href="https://www.instagram.com/alexwillowmusic/" target="_blank">            
