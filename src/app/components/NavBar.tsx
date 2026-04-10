@@ -1,5 +1,10 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation";
+
 import Instagram from "../../../public/Instagram.svg"
 import Mail from "../../../public/Mail.svg"
 import Spotify from "../../../public/Spotify.svg"
@@ -7,43 +12,78 @@ import Youtube from "../../../public/Youtube.svg"
 import Logo from "../../../public/AlexWillowLogo.png"
 
 export default function NavBar() {
-    return (
-        <nav className="absolute top-0 left-0 w-full z-50 flex items-center justify-between px-10 py-6 bg-transparent text-white">
-            
-            {/*Logo + Links*/}
-            <div className="flex items-center gap-12">
+  const [open, setOpen] = useState(false)
+  const pathname = usePathname();
+
+  return (
+    <nav className="absolute top-0 left-0 w-full z-50 px-6 md:px-10 py-6 text-white font-kurale">
+      
+      <div className="flex items-center justify-between">
+        
+        {/* LEFT */}
+        <div className="flex items-center gap-6 md:gap-12">
+            <Link href="/" onClick={() => setOpen(false)}>
                 <Image 
                     src={Logo} 
                     height={60} 
                     width={60} 
-                    alt="Logo" 
+                    alt="Logo"
                     className="transition-transform duration-300 hover:scale-110 hover:rotate-3"
                 />
+            </Link>
 
-                <div className="flex gap-8 text-lg font-medium">
-                    <Link className="hover:underline decoration-1 underline-offset-8" href="/">Home</Link>
-                    <Link className="hover:underline decoration-1 underline-offset-8" href="/EPK">EPK</Link>
-                    <Link className="hover:underline decoration-1 underline-offset-8" href="/shows">Show Dates</Link>
-                    <Link className="hover:underline decoration-1 underline-offset-8" href="/contact">Contact</Link>
-                </div>
-            </div>
+          {/* Desktop Links */}
+          <div className="hidden md:flex gap-8 text-xl nav-links">
+            <Link href="/" className={`${pathname === "/" ? "underline" : ""} hover:text-[#4F6A89] transition-colors duration-200`}>Home</Link>
+            <Link href="/EPK" className={`${pathname === "/EPK" ? "underline" : ""} hover:text-[#4F6A89] transition-colors duration-200`}>EPK</Link>
+            <Link href="/shows" className={`${pathname === "/shows" ? "underline" : ""} hover:text-[#4F6A89] transition-colors duration-200`}>Show Dates</Link>
+            <Link href="/contact" className={`${pathname === "/contact" ? "underline" : ""} hover:text-[#4F6A89] transition-colors duration-200`}>Contact</Link>
+            <Link href="/lyrics" className={`${pathname === "/lyrics" ? "underline" : ""} hover:text-[#4F6A89] transition-colors duration-200`}>Lyrics</Link>
+          </div>
+        </div>
 
-            {/*Social Media Pill*/}
-            <div className="flex items-center gap-6 px-5 py-2 bg-black/30 backdrop-blur-md border border-[#B3B3B3] rounded-full shadow-2xl">
-                <Link href="https://open.spotify.com/artist/73etH0gcHNOnWLXD0Rbamb" target="_blank" rel="noopener noreferrer">
-                    <Image src={Spotify} height={30} width={30} alt="Spotify" className="hover:opacity-70 transition-opacity"/>
-                </Link>
-                <Link href="mailto:your@email.com">
-                    <Image src={Mail} height={30} width={30} alt="Mail" className="hover:opacity-70 transition-opacity"/>
-                </Link>
-                <Link href="https://www.instagram.com/alexwillowmusic/" target="_blank" rel="noopener noreferrer">            
-                    <Image src={Instagram} height={30} width={30} alt="Instagram" className="hover:opacity-70 transition-opacity"/>
-                </Link>
-                <Link href="https://www.youtube.com/@alex.willow" target="_blank" rel="noopener noreferrer">            
-                    <Image src={Youtube} height={30} width={30} alt="Youtube" className="hover:opacity-70 transition-opacity"/>
-                </Link>
-            </div>
+        {/* RIGHT */}
+        <div className="hidden md:flex items-center gap-6 px-5 py-2 bg-black/30 backdrop-blur-md border border-[#B3B3B3] rounded-full shadow-2xl">
+          <Link href="https://open.spotify.com/artist/73etH0gcHNOnWLXD0Rbamb" target="_blank">
+            <Image src={Spotify} height={26} width={26} alt="Spotify"/>
+          </Link>
+          <Link href="mailto:alexwillowmusic@gmail.com">
+            <Image src={Mail} height={26} width={26} alt="Mail"/>
+          </Link>
+          <Link href="https://www.instagram.com/alexwillowmusic/" target="_blank">            
+            <Image src={Instagram} height={26} width={26} alt="Instagram"/>
+          </Link>
+          <Link href="https://www.youtube.com/@alex.willow" target="_blank">            
+            <Image src={Youtube} height={26} width={26} alt="Youtube"/>
+          </Link>
+        </div>
 
-        </nav>
-    );
+        {/* Mobile Menu Button */}
+        <button 
+          onClick={() => setOpen(!open)} 
+          className="md:hidden text-2xl"
+        >
+          ☰
+        </button>
+      </div>
+
+      {/* Mobile Dropdown */}
+      {open && (
+        <div className="md:hidden mt-4 flex flex-col gap-4 bg-black/80 backdrop-blur-md p-6 rounded-xl nav-links">
+          <Link href="/" onClick={() => setOpen(false)}>Home</Link>
+          <Link href="/EPK" onClick={() => setOpen(false)} >EPK</Link>
+          <Link href="/shows" onClick={() => setOpen(false)}>Show Dates</Link>
+          <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
+          <Link href="/lyrics" onClick={() => setOpen(false)}>Lyrics</Link>
+
+          <div className="flex gap-4 pt-4">
+            <Image src={Spotify} height={24} width={24} alt="Spotify"/>
+            <Image src={Mail} height={24} width={24} alt="Mail"/>
+            <Image src={Instagram} height={24} width={24} alt="Instagram"/>
+            <Image src={Youtube} height={24} width={24} alt="Youtube"/>
+          </div>
+        </div>
+      )}
+    </nav>
+  )
 }
