@@ -8,6 +8,7 @@
   --lightblue: #d2e6ff;
   --navyblue: #2e2d6a;
   --lightbrown: #96715b;
+  --offwhite: #D8D1C8;
   --darkbrown:#2f211c;
 }
 
@@ -19,10 +20,11 @@
   --color-navyblue: var(--navyblue);
   --color-lightbrown: var(--lightbrown);
   --color-darkbrown: var(--darkbrown);
+  --color-offwhite: var(--offwhite);
 }
 
 body {
-  background: var(--darkbrown);
+  background: var(--offwhite);
   color: var(--lightblue);
   font-family: 'Kurale', serif;
 }
@@ -43,4 +45,13 @@ h2 {
 
 .font-kurale {
   font-family: 'Kurale', serif;
+}
+
+.lined-background {
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 27px,
+    #909090 27px,
+    #909090 28px
+  );
 }
