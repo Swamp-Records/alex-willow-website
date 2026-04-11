@@ -19,7 +19,7 @@ export default function LyricsBox({title, album, verses}: Song){
     return (<>
     <div className="flex flex-col border-black border rounded-lg p-4 w-150 m-3">
         <div className="flex flex-row justify-between items-end ">
-            <div className="text-2xl text-black">{title}</div>
+            <div className="text-2xl text-black font-extrabold">{title}</div>
             <button
             className="w-10 text-2xl text-black font-bold"
             onClick={handleClick}
