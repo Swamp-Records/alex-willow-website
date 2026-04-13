@@ -1,35 +1,89 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import Instagram from "../../../public/Instagram.png"
-import Mail from "../../../public/Mail.png"
-import Spotify from "../../../public/Spotify.png"
-import Youtube from "../../../public/Youtube.png"
+import { usePathname } from "next/navigation";
+
+import Instagram from "../../../public/Instagram.svg"
+import Mail from "../../../public/Mail.svg"
+import Spotify from "../../../public/Spotify.svg"
+import Youtube from "../../../public/Youtube.svg"
 import Logo from "../../../public/AlexWillowLogo.png"
 
-export default function NavBar(){
-    return <>
-    <div className="top-0 absolute min-w-screen text-darkbrown flex-row p-2">
-        <Image src={Logo} height={80} width={80} alt="Logo" className="absolute left-10 top-3 transition-transform duration-300 hover:scale-110 hover:rotate-3"/>
+export default function NavBar() {
+  const [open, setOpen] = useState(false)
+  const pathname = usePathname();
 
-        <div className="flex text-l gap-8 justify-end">
-            <Link className="hover:underline" href="/">Home</Link>
-            <Link className="hover:underline" href="/about">About</Link>
-            <Link className="hover:underline" href="/EPK">EPK</Link>
-            <Link className="hover:underline" href="/shows">Shows</Link>
-        </div>        
-        <div className="flex gap-10 p-2 justify-end">
-            <Link href="https://www.instagram.com/alexwillowmusic/" target="_blank" rel="noopener noreferrer">            
-                <Image src={Instagram} height={30} width={30} alt="Instagram"/>
+  return (
+    <nav className="absolute top-0 left-0 w-full z-50 px-6 md:px-10 py-6 text-white font-kurale">
+      
+      <div className="flex items-center justify-between">
+        
+        {/* LEFT */}
+        <div className="flex items-center gap-6 md:gap-12">
+            <Link href="/" onClick={() => setOpen(false)}>
+                <Image 
+                    src={Logo} 
+                    height={60} 
+                    width={60} 
+                    alt="Logo"
+                    className="transition-transform duration-300 hover:scale-110 hover:rotate-3"
+                />
             </Link>
-            <Image src={Mail} height={30} width={30} alt="Mail"/>
-            <Link href="https://open.spotify.com/artist/73etH0gcHNOnWLXD0Rbamb" target="_blank" rel="noopener noreferrer">
-                <Image src={Spotify}  height={30} width={30} alt="Spotify"/>
-            </Link>
-            <Link href="https://www.youtube.com/@alex.willow" target="_blank" rel="noopener noreferrer">            
-                <Image src={Youtube} height={30} width={30} alt="Youtube"/>
-            </Link>
+
+          {/* Desktop Links */}
+          <div className="hidden md:flex gap-8 text-xl nav-links">
+            <Link href="/" className={`${pathname === "/" ? "underline" : ""} hover:text-[#4F6A89] transition-colors duration-200`}>Home</Link>
+            <Link href="/EPK" className={`${pathname === "/EPK" ? "underline" : ""} hover:text-[#4F6A89] transition-colors duration-200`}>EPK</Link>
+            <Link href="/shows" className={`${pathname === "/shows" ? "underline" : ""} hover:text-[#4F6A89] transition-colors duration-200`}>Show Dates</Link>
+            <Link href="/contact" className={`${pathname === "/contact" ? "underline" : ""} hover:text-[#4F6A89] transition-colors duration-200`}>Contact</Link>
+            <Link href="/lyrics" className={`${pathname === "/lyrics" ? "underline" : ""} hover:text-[#4F6A89] transition-colors duration-200`}>Lyrics</Link>
+          </div>
         </div>
-    </div>
-    </>
 
+        {/* RIGHT */}
+        <div className="hidden md:flex items-center gap-6 px-5 py-2 bg-black/30 backdrop-blur-md border border-[#B3B3B3] rounded-full shadow-2xl">
+          <Link href="https://open.spotify.com/artist/73etH0gcHNOnWLXD0Rbamb" target="_blank">
+            <Image src={Spotify} height={26} width={26} alt="Spotify"/>
+          </Link>
+          <Link href="mailto:alexwillowmusic@gmail.com">
+            <Image src={Mail} height={26} width={26} alt="Mail"/>
+          </Link>
+          <Link href="https://www.instagram.com/alexwillowmusic/" target="_blank">            
+            <Image src={Instagram} height={26} width={26} alt="Instagram"/>
+          </Link>
+          <Link href="https://www.youtube.com/@alex.willow" target="_blank">            
+            <Image src={Youtube} height={26} width={26} alt="Youtube"/>
+          </Link>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button 
+          onClick={() => setOpen(!open)} 
+          className="md:hidden text-2xl"
+        >
+          ☰
+        </button>
+      </div>
+
+      {/* Mobile Dropdown */}
+      {open && (
+        <div className="md:hidden mt-4 flex flex-col gap-4 bg-black/80 backdrop-blur-md p-6 rounded-xl nav-links">
+          <Link href="/" onClick={() => setOpen(false)}>Home</Link>
+          <Link href="/EPK" onClick={() => setOpen(false)} >EPK</Link>
+          <Link href="/shows" onClick={() => setOpen(false)}>Show Dates</Link>
+          <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
+          <Link href="/lyrics" onClick={() => setOpen(false)}>Lyrics</Link>
+
+          <div className="flex gap-4 pt-4">
+            <Image src={Spotify} height={24} width={24} alt="Spotify"/>
+            <Image src={Mail} height={24} width={24} alt="Mail"/>
+            <Image src={Instagram} height={24} width={24} alt="Instagram"/>
+            <Image src={Youtube} height={24} width={24} alt="Youtube"/>
+          </div>
+        </div>
+      )}
+    </nav>
+  )
 }

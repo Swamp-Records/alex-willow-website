@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Kurale&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Licorice&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -18,10 +21,26 @@
   --color-darkbrown: var(--darkbrown);
 }
 
-
-
 body {
   background: var(--darkbrown);
   color: var(--lightblue);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kurale', serif;
+}
+
+h1{
+  font-family: 'Lavishly Yours', cursive;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  color: white
+}
+
+h2 {
+  font-family: 'Licorice', cursive;
+  color: #50749F;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.font-kurale {
+  font-family: 'Kurale', serif;
 }
