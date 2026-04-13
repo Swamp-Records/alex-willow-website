@@ -50,7 +50,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${lavishlyYours} antialiased`}
       >
-        <NavBar/>
+        <div className="absolute top-0 left-0 w-full z-50">
+          <NavBar/> 
+        </div>
         <Footer/>
 
         {children}
