@@ -25,7 +25,7 @@
                     </div>
                         <div >
                         {shows.map((show, i)=>(
-                            <ShowsBox title={show.title} ticketLink={show.ticketLink} location={show.location} date={show.date}/>
+                            <ShowsBox key={i} title={show.title} ticketLink={show.ticketLink} location={show.location} date={show.date}/>
                         ))}
                         </div>
                 </div>
