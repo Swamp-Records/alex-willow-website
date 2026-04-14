@@ -44,7 +44,7 @@ export default function Lyrics(){
                     </div>
                     <div>
                         {songs.map((song, i)=>(
-                            <LyricsBox title={song.title} album={song.album} verses={song.verses}/>
+                            <LyricsBox key={i} title={song.title} album={song.album} verses={song.verses}/>
                         ))
                         }
                     </div>
