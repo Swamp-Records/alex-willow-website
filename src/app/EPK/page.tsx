@@ -230,7 +230,7 @@ export default function EPK() {
         .epk-hero {
           position: relative;
           width: 100%;
-          height: 776px;
+          min-height: 100svh;
           overflow: hidden;
         }
 
@@ -387,7 +387,6 @@ export default function EPK() {
           width: 100%;
           background: #D8D1C8;
           padding: 2rem 2rem 0;
-          overflow: hidden;
         }
 
         .gallery-title {
@@ -397,14 +396,14 @@ export default function EPK() {
 
         .gallery-row {
           position: relative;
-          z-index: 1;
+          z-index: 2;
           display: flex;
           align-items: flex-end;
           justify-content: center;
           gap: 1.5rem;
           max-width: 1400px;
           margin: 0 auto;
-          padding-bottom: 3rem;
+          padding-bottom: 0;
           flex-wrap: wrap;
         }
 
@@ -435,7 +434,7 @@ export default function EPK() {
           z-index: 1;
           height: 282px;
           background: #a77d5c;
-          margin: 0 -2rem;
+          margin: -120px -2rem 0;
         }
 
         /* ── MUSIC ────────────────────────────────────── */
