@@ -4,7 +4,6 @@ import LyricsHero from "../../../public/LyricsHero.png"
 import ShinyHeadshot from "../../../public/ShinyHeadshot.png"
 import LyricsBox from "../components/LyricsBox";
 import { songs } from "../data/songData";
-import Footer from "../components/Footer";
 
 export default function Lyrics(){
     return (
@@ -50,7 +49,6 @@ export default function Lyrics(){
                         }
                     </div>
                 </div>
-                <Footer />
             </div>
         </div>
     )

@@ -8,7 +8,6 @@ import SpotifySVG from "../../../public/Spotify.svg";
 import YoutubeSVG from "../../../public/Youtube.svg";
 import SpotifyBlueSVG from "../../../public/Spotify-blue.svg";
 import YoutubeBlueSVG from "../../../public/Youtube-blue.svg";
-import Footer from "../components/Footer";
 
 const ARTIST_PHOTO_L  = "/flower-image2.svg";
 const COLLAGE_IMG     = "/flower-image.png";
@@ -190,8 +189,6 @@ export default function EPK() {
           </Link>
         </div>
       </section>
-
-      <Footer />
 
       <style jsx>{`
         /* ── SHARED ───────────────────────────────────── */

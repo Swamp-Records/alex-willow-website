@@ -5,7 +5,6 @@
     import LyricsBox from "../components/LyricsBox";
     import { shows } from "../data/showData";
     import ShowsBox from "../components/ShowsBox";
-import Footer from "../components/Footer";
 
     export default function Shows(){
         return (
@@ -29,7 +28,6 @@ import Footer from "../components/Footer";
                             <ShowsBox key={i} title={show.title} ticketLink={show.ticketLink} location={show.location} date={show.date}/>
                         ))}
                         </div>
-                        <Footer />
                 </div>
             </div>
         )
