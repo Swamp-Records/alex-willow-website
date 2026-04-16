@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import { Song } from "../data/songData";
+import Footer from "./Footer";
 
 
 export default function LyricsBox({title, album, verses}: Song){

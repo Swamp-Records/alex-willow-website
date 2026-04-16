@@ -49,10 +49,13 @@ h2 {
 }
 
 .lined-background {
+  background-color: #D8D1C8;
   background-image: repeating-linear-gradient(
-    transparent,
-    transparent 27px,
-    #909090 27px,
-    #909090 28px
+    to bottom,
+    #D8D1C8 0px,
+    #D8D1C8 27px,
+    #b5b0a9 27px,
+    #b5b0a9 28px
   );
+  background-size: 100% 28px;
 }

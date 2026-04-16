@@ -26,7 +26,7 @@ export default function EPK() {
 
       {/*bio*/}
       <section className="epk-bio">
-        <div className="lined-bg" />
+        <div className="absolute inset-0 lined-background z-0" />
 
         <div className="bio-row">
           {/*flower*/}
@@ -101,7 +101,7 @@ export default function EPK() {
 
       {/*gallery*/}
       <section className="epk-gallery">
-        <div className="lined-bg" />
+        <div className="absolute inset-0 lined-background z-0" />
 
         <span className="section-title gallery-title">Gallery</span>
 
@@ -127,7 +127,7 @@ export default function EPK() {
 
       {/* music */}
       <section className="epk-music">
-        <div className="lined-bg" />
+        <div className="absolute inset-0 lined-background z-0" />
 
         <span className="section-title music-title">Music</span>
 
@@ -195,19 +195,6 @@ export default function EPK() {
         .epk-root {
           width: 100%;
           overflow-x: hidden;
-        }
-
-        .lined-bg {
-          position: absolute;
-          inset: 0;
-          background-color: #D8D1C8;
-          background-image: repeating-linear-gradient(
-            transparent,
-            transparent 27px,
-            #909090 27px,
-            #D8D1C8 28px
-          );
-          z-index: 0;
         }
 
         .section-title {
@@ -618,5 +605,6 @@ export default function EPK() {
         }
       `}</style>
     </main>
+    
   );
 }
