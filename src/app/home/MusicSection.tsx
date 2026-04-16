@@ -8,7 +8,7 @@ export default function MusicSection() {
   return (
     <section className="music-section">
 
-        <div className="lined-paper" />
+        <div className="absolute inset-0 lined-background z-0" />
 
         <div className="flower-right">
             <Image
@@ -76,19 +76,6 @@ export default function MusicSection() {
                 padding: 5rem 2rem 7rem;
                 overflow: hidden;
             } 
-
-            .lined-paper {
-                position: absolute;
-                inset: 0;
-                background-color: #D8D1C8;
-                background-image: repeating-linear-gradient(
-                    transparent,
-                    transparent 27px,
-                    #909090 27px,
-                    #D8D1C8 28px
-                );
-                z-index: 0;
-            }
 
             .flower-right {
                 position: absolute;

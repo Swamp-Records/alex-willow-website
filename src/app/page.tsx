@@ -13,7 +13,7 @@ export default function Home() {
         <HeroSection />
         <MusicSection />
         <BioSection />
-        {/*<Footer /> */}
+        <Footer />
     </main>
   );
 }
