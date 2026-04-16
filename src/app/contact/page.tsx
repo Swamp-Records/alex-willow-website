@@ -1,23 +1,13 @@
 "use client";
 
 import { useState, FormEvent, useRef } from "react";
-import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
-  
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-  const captchaRef = useRef<HCaptcha>(null);
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    // if (!captchaToken) {
-    //   setStatus("error");
-    //   setMessage("Please complete the captcha.");
-    //   return;
-    // }
 
     setStatus("loading");
     const formData = new FormData(event.currentTarget);
@@ -36,9 +26,6 @@ export default function ContactForm() {
         setStatus("success");
         setMessage("Message sent");
         (event.target as HTMLFormElement).reset();
-        
-        setCaptchaToken(null);
-        captchaRef.current?.resetCaptcha();
       } else {
         setStatus("error");
         setMessage(data.message);
@@ -47,10 +34,6 @@ export default function ContactForm() {
       setStatus("error");
       setMessage("Network error. Please try again.");
     }
-  };
-
-  const onVerifyCaptcha = (token: string) => {
-    setCaptchaToken(token);
   };
 
   return (
@@ -83,15 +66,6 @@ export default function ContactForm() {
 
           <div className="w-full">
             <textarea name="message" required rows={4} className="w-full bg-white/90 px-4 py-3 border border-transparent rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all text-[#444] font-inter text-[14px]" placeholder="Message" />
-          </div>
-          
-          <div className="flex justify-center py-2 scale-90 md:scale-100">
-            <HCaptcha
-              ref={captchaRef}
-              sitekey="10000000-ffff-ffff-ffff-000000000001"
-              onVerify={onVerifyCaptcha}
-              onExpire={() => setCaptchaToken(null)}
-            />
           </div>
 
           <div className="w-full flex justify-center mt-2">
