@@ -48,10 +48,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${lavishlyYours} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${lavishlyYours.variable} antialiased`}
       >
-        <NavBar/>
-        {/* <Footer/> */}
+        <div className="absolute top-0 left-0 w-full z-50">
+          <NavBar/> 
+        </div>
+        <Footer/>
 
         {children}
       </body>
