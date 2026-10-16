@@ -600,9 +600,14 @@ export default function EPK() {
           .bio-deco-row {
             display: none;
           }
+          .other-songs {
+            width: 100%;
+            max-width: 400px;
+          }
           .song-card {
-            width: 140px;
-            height: 140px;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
           }
            .single-card {
                margin-left: 0;
