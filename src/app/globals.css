@@ -42,6 +42,7 @@ h2 {
   font-family: 'Licorice', cursive;
   color: #50749F;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.2;
 }
 
 .font-kurale {
@@ -58,4 +59,17 @@ h2 {
     #b5b0a9 28px
   );
   background-size: 100% 28px;
+}
+
+.lined-box {
+  background-color: #D8D1C8;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 27px,
+    #b5b0a9 27px,
+    #b5b0a9 28px
+  );
+  background-size: 100% 28px;
+  background-position: 0 14px; /* matches the 14px top padding below */
 }
