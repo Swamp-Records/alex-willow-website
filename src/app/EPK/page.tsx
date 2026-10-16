@@ -380,6 +380,7 @@ export default function EPK() {
         .gallery-title {
           font-size: clamp(60px, 10vw, 128px);
           margin-bottom: 2.5rem;
+          padding-bottom: 0.28em;
         }
 
         .gallery-row {
