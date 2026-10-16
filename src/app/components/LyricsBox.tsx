@@ -18,7 +18,7 @@ export default function LyricsBox({title, album, verses}: Song){
     }
 
     return (<>
-    <div className="flex flex-col border-black border rounded-lg p-4 py-[14px] w-150 m-3">
+    <div className="flex flex-col border-black border rounded-lg p-4 py-[14px] w-150 m-3 max-md:w-full max-md:mx-0">
         <div className="flex flex-row justify-between items-end h-[28px]">
             <div className="text-2xl text-black font-extrabold leading-[28px]">{title}</div>
             <button
