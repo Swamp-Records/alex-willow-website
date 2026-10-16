@@ -584,6 +584,7 @@ export default function EPK() {
           }
           .other-songs {
             margin-top: 0;
+            align-self: center;
           }
           .epk-socials {
             gap: 2.5rem;
