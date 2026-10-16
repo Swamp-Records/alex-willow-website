@@ -603,6 +603,12 @@ export default function EPK() {
             width: 140px;
             height: 140px;
           }
+           .single-card {
+               margin-left: 0;
+            }
+            .ipod-wrap {
+              width: 200px;
+            }  
         }
       `}</style>
     </main>
