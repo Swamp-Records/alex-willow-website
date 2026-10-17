@@ -8,6 +8,7 @@ import SpotifySVG from "../../../public/Spotify.svg";
 import YoutubeSVG from "../../../public/Youtube.svg";
 import SpotifyBlueSVG from "../../../public/Spotify-blue.svg";
 import YoutubeBlueSVG from "../../../public/Youtube-blue.svg";
+import { getAlexAge } from "@/app/utils/age";
 
 const ARTIST_PHOTO_L  = "/flower-image2.svg";
 const COLLAGE_IMG     = "/flower-image.png";
@@ -47,7 +48,7 @@ export default function EPK() {
             <p className="bio-body">
               When Alex Willow began to sing, he crossed over into a world he knew he&apos;d never leave.
               With a mystical readiness, the blue-ink secrets etched in his leatherbound journal turned to
-              sonic histories begging to be told. At 20-years old, this Floridian singer-songwriter houses
+              sonic histories begging to be told. At <span suppressHydrationWarning>{getAlexAge()}</span>-years old, this Floridian singer-songwriter houses
               a wisdom rarely found, imbued with the urgency and vitality characteristic of youth. Delicate
               melodies and commanding vocals evoke the artistry of Ryan Beatty and Conan Gray, with an
               intimate lyricism uniquely his own. The debut single &ldquo;Shin Splints&rdquo; follows Alex
@@ -379,6 +380,7 @@ export default function EPK() {
         .gallery-title {
           font-size: clamp(60px, 10vw, 128px);
           margin-bottom: 2.5rem;
+          padding-bottom: 0.28em;
         }
 
         .gallery-row {
@@ -583,6 +585,7 @@ export default function EPK() {
           }
           .other-songs {
             margin-top: 0;
+            align-self: center;
           }
           .epk-socials {
             gap: 2.5rem;
@@ -598,10 +601,21 @@ export default function EPK() {
           .bio-deco-row {
             display: none;
           }
-          .song-card {
-            width: 140px;
-            height: 140px;
+          .other-songs {
+            width: 100%;
+            max-width: 400px;
           }
+          .song-card {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+          }
+           .single-card {
+               margin-left: 0;
+            }
+            .ipod-wrap {
+              width: 200px;
+            }  
         }
       `}</style>
     </main>
