@@ -1,5 +1,5 @@
 import HeroSection from "./home/HeroSection";
-import BioSection from "./home/BioSection";
+import PresaveSection from "./home/PresaveSection";
 import MusicSection from "./home/MusicSection";
 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col">
         <HeroSection />
         <MusicSection />
-        <BioSection />
+        <PresaveSection />
     </main>
   );
 }
