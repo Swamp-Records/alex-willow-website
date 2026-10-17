@@ -1,5 +1,5 @@
 // Alex's birthday. PLACEHOLDER: replace with his real birthday.
-export const ALEX_BIRTHDAY = { year: 2004, month: 12, day: 1 };
+export const ALEX_BIRTHDAY = { year: 2004, month: 12, day: 29 };
 
 // Works out someone's current age from their birthday.
 export function getAge(year: number, month: number, day: number): number {
