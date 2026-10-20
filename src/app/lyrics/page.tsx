@@ -11,7 +11,7 @@ export default function Lyrics(){
             <div className="absolute inset-0 lined-background z-0" />
             
             <div className="relative z-10 flex flex-col items-center min-h-screen">
-                <div className="relative w-full flex items-center justify-center" style={{minHeight:"460px"}}>
+                <div className="relative w-full flex items-center justify-center max-md:items-start" style={{minHeight:"460px"}}>
                     <Image
                         src={LyricsHero}
                         alt="Dreamy image of Alex Willow"
@@ -19,21 +19,21 @@ export default function Lyrics(){
                         className="object-cover z-0"
                     />
                     <div className="absolute inset-0 bg-black opacity-40" style={{zIndex: 1}} />
-                    <div className="relative z-20">
+                    <div className="relative z-20 max-md:mt-8">
                         <h1 className="text-white text-4xl">Lyrics</h1>
                     </div>
                 </div>
-                <div className="flex flex-row justify-between items-start w-full p-6" style={{zIndex:2}}>
-                    <div className="flex flex-col">
+                <div className="flex flex-row justify-between items-start w-full p-6 max-md:flex-col max-md:items-center" style={{zIndex:2}}>
+                    <div className="flex flex-col max-md:w-full">
                         <Image
                             src = {ShinyHeadshot}
                             alt="A shiny headshot!"
                             width={486}
                             height={486}
-                            className="object-cover z-20 m-3 -mt-64"
+                            className="object-cover z-20 m-3 -mt-64 max-md:mx-0 max-md:w-full max-md:h-auto"
                             />
                             <iframe data-testid="embed-iframe" 
-                            className="rounded-xl m-3" 
+                            className="rounded-xl m-3 max-md:mx-0 max-md:w-full max-md:h-[152px]"
                             src="https://open.spotify.com/embed/artist/73etH0gcHNOnWLXD0Rbamb?utm_source=generator" 
                             width="486px" 
                             height="300px"
@@ -42,7 +42,7 @@ export default function Lyrics(){
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
                             loading="lazy"/>
                     </div>
-                    <div>
+                    <div className="max-md:w-full">
                         {songs.map((song, i)=>(
                             <LyricsBox key={i} title={song.title} album={song.album} verses={song.verses}/>
                         ))
