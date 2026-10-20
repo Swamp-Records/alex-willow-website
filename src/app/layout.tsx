@@ -37,6 +37,9 @@ const kurale = Kurale({
 
 export const metadata: Metadata = {
   title: "Alex Willow",
+  icons: {
+    icon: { url: "/AlexWillow_Favicon.svg", type: "image/svg+xml" },
+  },
   description: "Alex Willow's personal website - showcasing projects, bio, and contact information.",
 };
 
