@@ -8,10 +8,21 @@ import SpotifySVG from "../../../public/Spotify.svg";
 import YoutubeSVG from "../../../public/Youtube.svg";
 import SpotifyBlueSVG from "../../../public/Spotify-blue.svg";
 import YoutubeBlueSVG from "../../../public/Youtube-blue.svg";
-import { getAlexAge } from "@/app/utils/age";
+import EPKImage from "../../../public/ALEXWILLOW_EPK.png";
 
 const ARTIST_PHOTO_L  = "/flower-image2.svg";
 const COLLAGE_IMG     = "/flower-image.png";
+
+// Link rectangles from the original 612 by 792 PDF, scaled with the image.
+const EPK_LINKS = [
+  { label: "Spotify", href: "https://open.spotify.com/artist/73etH0gcHNOnWLXD0Rbamb", rect: [23.0371, 739.0262, 51.5371, 767.5262] },
+  { label: "Instagram", href: "https://www.instagram.com/alexwillowmusic/", rect: [138.5621, 739.0262, 167.0621, 767.5262] },
+  { label: "YouTube", href: "https://www.youtube.com/@alex.willow", rect: [57.2384, 739.0593, 98.4884, 767.5593] },
+  { label: "TikTok", href: "https://www.tiktok.com/@alexwillowmusic?_r=1&_t=ZP-9AUpE3IOpQ6", rect: [172.7634, 739.0262, 199.7634, 767.5262] },
+  { label: "Alex Willow website", href: "https://alexwillowmusic.com/", rect: [104.3609, 739.0262, 132.8609, 767.5262] },
+  { label: "The Alligator article", href: "https://www.alligator.org/article/2025/11/gainesville-indie-artist-alex-willow-releases-debut-ep", rect: [433.4103, 746.0735, 588.6603, 766.3235] },
+  { label: "Keys Weekly article", href: "https://keysweekly.com/42/key-west-kid-hits-gainesvilles-music-scene/", rect: [450.215, 719.0533, 589.715, 739.3033] },
+];
 
 export default function EPK() {
   return (
@@ -45,18 +56,34 @@ export default function EPK() {
           <div
             className="bio-text-box"
           >
-            <p className="bio-body">
-              When Alex Willow began to sing, he crossed over into a world he knew he&apos;d never leave.
-              With a mystical readiness, the blue-ink secrets etched in his leatherbound journal turned to
-              sonic histories begging to be told. At <span suppressHydrationWarning>{getAlexAge()}</span>-years old, this Floridian singer-songwriter houses
-              a wisdom rarely found, imbued with the urgency and vitality characteristic of youth. Delicate
-              melodies and commanding vocals evoke the artistry of Ryan Beatty and Conan Gray, with an
-              intimate lyricism uniquely his own. The debut single &ldquo;Shin Splints&rdquo; follows Alex
-              as he balances his future and the past, the real and the unreal. Willow, the forthcoming EP,
-              will capture the strenuous emotion of an adolescence marked by shame, loss, forgiveness and
-              love. Crossing the boundary from musician to storyteller, Alex Willow&apos;s words will
-              remain in your mind, his voice in your heart, and his songs forever a part of you.
-            </p>
+            <div className="bio-pdf-preview">
+              <Image
+                className="bio-pdf"
+                src={EPKImage}
+                alt="Alex Willow electronic press kit, including artist biography, music and contact information"
+                sizes="(max-width: 1100px) 100vw, 860px"
+              />
+              {EPK_LINKS.map(({ label, href, rect: [left, top, right, bottom] }) => (
+                <a
+                  key={label}
+                  className="bio-pdf-hotspot"
+                  href={href}
+                  aria-label={label}
+                  title={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    left: `${left / 612 * 100}%`,
+                    top: `${top / 792 * 100}%`,
+                    width: `${(right - left) / 612 * 100}%`,
+                    height: `${(bottom - top) / 792 * 100}%`,
+                  }}
+                />
+              ))}
+            </div>
+            <a className="bio-pdf-link" href="/ALEXWILLOW_EPK.pdf" target="_blank" rel="noopener noreferrer">
+              Open the EPK PDF
+            </a>
           </div>
 
           {/*artist photo + emblem */}
@@ -287,15 +314,41 @@ export default function EPK() {
           background-size: cover;
           background-color: #c9b5a0;
           border-radius: 2px;
-          padding: 2.5rem 3rem;
+          min-width: 0;
+          padding: 0;
           box-shadow: 0 4px 24px rgba(0,0,0,0.15);
         }
 
-        .bio-body {
-          font-family: 'Kurale', serif;
-          font-size: clamp(16px, 1.8vw, 28px);
-          line-height: 1.78;
+        .bio-pdf-preview {
+          position: relative;
+        }
+
+        .bio-pdf-hotspot {
+          position: absolute;
+          display: block;
+          border-radius: 2px;
+        }
+
+        .bio-pdf-hotspot:hover,
+        .bio-pdf-hotspot:focus-visible {
+          outline: 2px solid #f5efe0;
+          outline-offset: 2px;
+          background: rgba(255, 255, 255, 0.15);
+        }
+
+        .bio-pdf {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+
+        .bio-pdf-link {
+          display: block;
+          padding: 1rem;
           color: #111;
+          text-align: center;
+          text-decoration: underline;
+          font-family: 'Kurale', serif;
         }
 
         .bio-deco-col {
