@@ -36,11 +36,47 @@ const kurale = Kurale({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Willow",
-  icons: {
-    icon: { url: "/AlexWillow_Favicon.svg", type: "image/svg+xml" },
+  metadataBase: new URL("https://alexwillowmusic.com"),
+  title: {
+    default: "Alex Willow | Gainesville Music Artist",
+    template: "%s | Alex Willow",
   },
-  description: "Alex Willow's personal website - showcasing projects, bio, and contact information.",
+  description:
+    "Official website of Gainesville-based music artist Alex Willow. Stream new music, shop limited edition merch, and explore projects with Swamp Records.",
+  keywords: [
+    "Alex Willow",
+    "Gainesville musician",
+    "Swamp Records",
+    "Alex Willow merch",
+    "Alex Willow music",
+  ],
+  authors: [{ name: "Alex Willow" }],
+  openGraph: {
+    type: "website",
+    siteName: "Alex Willow",
+    title: "Alex Willow",
+    description:
+      "Official website of Gainesville-based music artist Alex Willow. Stream new music, shop limited edition merch, and explore projects with Swamp Records.",
+    images: [
+      {
+        url: "/og-image.png", // add a 1200x630 image to /public, or remove until one exists
+        width: 1200,
+        height: 630,
+        alt: "Alex Willow",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alex Willow",
+    description:
+      "Official website of Gainesville-based music artist Alex Willow. Stream new music, shop limited edition merch, and explore projects with Swamp Records.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
