@@ -17,8 +17,9 @@ export default function Lyrics(){
                         alt="Dreamy image of Alex Willow"
                         fill
                         className="object-cover z-0"
+                        style={{ filter: "saturate(2.5)" }}
                     />
-                    <div className="absolute inset-0 bg-black opacity-40" style={{zIndex: 1}} />
+                    <div className="absolute inset-0 bg-black opacity-0" style={{zIndex: 1}} />
                     <div className="relative z-20">
                         <h1 className="text-white text-4xl">Lyrics</h1>
                     </div>
@@ -31,6 +32,7 @@ export default function Lyrics(){
                             width={486}
                             height={486}
                             className="object-cover z-20 m-3 -mt-64"
+                            style={{ filter: "saturate(2.5)" }}
                             />
                             <iframe data-testid="embed-iframe" 
                             className="rounded-xl m-3" 
