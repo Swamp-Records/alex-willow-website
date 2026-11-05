@@ -42,7 +42,7 @@ export default function MusicSection() {
                 <div className="stream-card">
 
                     <div className="ipod-wrapper">
-                        <Link href="https://open.spotify.com/track/57i8vNUy8JVA5QTo0UuMXf?si=59804a98e1854796" target="_blank">
+                        <Link href="https://open.spotify.com/track/6RqvWGunfNxHlb9smN5HxZ" target="_blank">
                             <Image
                                 src="/iPod.png"
                                 alt="iPod Classic"
@@ -63,7 +63,7 @@ export default function MusicSection() {
                         </Link>
                     </div>
 
-                    <h2 className="stream-text">Stream &ldquo;Shin Splints&rdquo;</h2>
+                    <h2 className="stream-text">Stream Adolescence</h2>
                 </div>
             </div>
         </div>
