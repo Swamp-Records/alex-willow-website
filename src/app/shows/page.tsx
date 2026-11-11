@@ -6,6 +6,12 @@
     import { shows } from "../data/showData";
     import ShowsBox from "../components/ShowsBox";
 
+    export const metadata = {
+        title: "Show Dates",
+        description:
+            "Upcoming live shows and tour dates for Gainesville artist Alex Willow.",
+    };
+
     export default function Shows(){
         return (
             <div className="relative min-h-screen">
