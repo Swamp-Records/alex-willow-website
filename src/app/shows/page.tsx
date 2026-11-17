@@ -1,18 +1,19 @@
     import Image from "next/image";
 
     import ShowsHero from "../../../public/ShowsHero.png"
-    import ShinyHeadshot from "../../../public/ShinyHeadshot.png"
-    import LyricsBox from "../components/LyricsBox";
-    import { shows } from "../data/showData";
+    import { getShows } from "../data/showData";
     import ShowsBox from "../components/ShowsBox";
 
     export const metadata = {
         title: "Show Dates",
-        description:
-            "Upcoming live shows and tour dates for Gainesville artist Alex Willow.",
+        description: "Upcoming live shows and tour dates for Gainesville artist Alex Willow.",
     };
 
-    export default function Shows(){
+    // Read the runtime API key and upcoming events on each request.
+    export const dynamic = "force-dynamic";
+
+    export default async function Shows(){
+        const shows = await getShows();
         return (
             <div className="relative min-h-screen">
                 <div className="absolute inset-0 lined-background z-0" />
@@ -29,8 +30,14 @@
                             <h1 className="text-white text-9xl" style={{fontSize:"6rem"}}>Upcoming</h1>
                         </div>
                     </div>
-                        <div className="w-full max-w-4x1 px-4" >
-                        {shows.map((show, i)=>(
+                        <div className="w-full max-w-4xl px-4" >
+                        {shows === null && (
+                            <p className="text-center text-black text-xl mt-10">Show dates are temporarily unavailable. Please check back soon.</p>
+                        )}
+                        {shows?.length === 0 && (
+                            <p className="text-center text-black text-xl mt-10">No upcoming shows right now. Check back soon!</p>
+                        )}
+                        {shows?.map((show, i)=>(
                             <ShowsBox key={i} title={show.title} ticketLink={show.ticketLink} location={show.location} date={show.date}/>
                         ))}
                         </div>
