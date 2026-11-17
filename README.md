@@ -34,3 +34,20 @@ Swamp Records Website: https://www.swamprecords.org/
 ## Developers
 
 Jess Anderson, Kushagra Katiyar, Adela Mikes,  Angelina Wu, Kalina Triggs, and Giovana Mitsunaga
+
+
+## Live show dates
+
+Set `BANDSINTOWN_APP_ID` to your Bandsintown application ID in the Cloudflare
+Worker runtime environment. For local development, put it in `.env.local`
+(which is ignored by Git). No `NEXT_PUBLIC_` prefix is needed.
+
+The `/shows` route fetches upcoming Alex Willow events on each request with a
+five-second timeout. It intentionally uses no persistent fetch cache, so it
+does not require an R2 incremental-cache binding or a key during static builds.
+An empty valid response displays “No upcoming shows”; configuration or API
+failures display “Show dates are temporarily unavailable.” Invalid event
+records are omitted, with an unavailable state if none are usable.
+
+Run `npm test` for the mocked API regression tests, `npm run build` for the
+Next.js build, and `npx opennextjs-cloudflare build` for the Cloudflare bundle.

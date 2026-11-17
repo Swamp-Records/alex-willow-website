@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react";
-import { shows, Show } from "../data/showData";
+import type { Show } from "../data/showData";
 
 
 export default function ShowsBox({title, ticketLink, location, date}: Show){

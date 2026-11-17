@@ -5,6 +5,12 @@ import ShinyHeadshot from "../../../public/ShinyHeadshot.png"
 import LyricsBox from "../components/LyricsBox";
 import { songs } from "../data/songData";
 
+export const metadata = {
+  title: "Lyrics",
+  description:
+    "Read lyrics to songs by Gainesville music artist Alex Willow.",
+};
+
 export default function Lyrics(){
     return (
         <div className="relative min-h-screen">
