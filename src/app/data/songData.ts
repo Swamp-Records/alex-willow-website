@@ -6,6 +6,79 @@ export type Song = {
 
 export const songs: Song[] = [
     {
+        title: "Adolescence",
+        album: "Adolescence",
+        verses: [
+            [
+                "There's a girl",
+                "That I've gotta see",
+                "She sounds like honey in tea,",
+                "Her voice reminds me",
+            ],
+            [
+                "Of an adolescence I never had,",
+                "Of a life that feels foreign,",
+                "She's so cool, I'm a torment",
+                "Spinning out",
+            ],
+            [
+                "I want to fall in love with you,",
+                "Through your childhood bedroom",
+                "Want to know the way you felt,",
+                "Before me, or someone else",
+            ],
+            [
+                "You'll be young",
+                "For all of your life",
+                "You're a kid all the time,",
+                "I find it charming",
+            ],
+            [
+                "Compared to me,",
+                "I've been grown for so long",
+                "I find comfort in calm,",
+                "You find it charming",
+            ],
+            [
+                "I want to fall in love with you,",
+                "Through your childhood bedroom",
+                "Want to know the way you felt,",
+                "Before me, or someone else",
+            ],
+            [
+                "Cardboard boxes under beds,",
+                "Forgotten dreams inside your head",
+                "Unlock them, baby let me in",
+                "To who you were as a kid",
+            ],
+            [
+                "I want to fall in love with you,",
+                "Through your childhood bedroom",
+                "Want to know the way you felt,",
+                "Before me, or someone else",
+            ],
+            [
+                "Cardboard boxes under beds,",
+                "Forgotten dreams inside your head",
+                "Unlock them, baby let me in",
+                "To who you were as a kid",
+            ],
+            [
+                "And if I could give you peace,",
+                "Do not hide, surrender freely",
+                "To the way I love you so,",
+                "If I can't, I'll let you go",
+            ],
+            [
+                "This is my promise to you,",
+                "Love you now, love you then",
+                "Love you tomorrow and when",
+                "I am angry, I'll remember",
+                "You back then",
+            ],
+        ]
+    },
+    {
         title: "Shin Splints",
         album: "Shin Splints",
         verses: [

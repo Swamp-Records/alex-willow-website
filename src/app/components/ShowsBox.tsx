@@ -18,8 +18,8 @@ export default function ShowsBox({title, ticketLink, location, date}: Show){
     }
 
     return(<>
-    <div className="flex flex-col border-black border rounded-lg p-4 w-4xl m-3">
-        <div className="flex flex-row justify-between items-end">
+    <div className="flex flex-col border-black border rounded-lg p-4 w-full max-w-4x1 my-3">
+        <div className="flex flex-col gap-3 md:flex-row md:justify-between md:items-end">
             <div className="flex flex-col">
                 <div className="text-2xl text-black font-bold">{title}</div>
                 <p className="text-black">{date}</p>

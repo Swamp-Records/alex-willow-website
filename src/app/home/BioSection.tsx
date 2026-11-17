@@ -6,6 +6,7 @@ import Instagram from "../../../public/Instagram.svg";
 import Mail from "../../../public/Mail.svg";
 import Spotify from "../../../public/Spotify.svg";
 import Youtube from "../../../public/Youtube.svg";
+import { getAlexAge } from "@/app/utils/age";
 
 export default function BioSection() {
   return (
@@ -32,7 +33,7 @@ export default function BioSection() {
           <h1 className="bio-title">About Alex</h1>
           <p>
             When Alex Willow began to sing, he crossed over into a world he knew he’d never leave. With a mystical readiness, 
-            the blue-ink secrets etched in his leatherbound journal turned to sonic histories begging to be told. At 20-years old, 
+            the blue-ink secrets etched in his leatherbound journal turned to sonic histories begging to be told. At <span suppressHydrationWarning>{getAlexAge()}</span>-years old, 
             this Floridian singer-songwriter houses a wisdom rarely found, imbued with the urgency and vitality characteristic of youth. 
             Delicate melodies and commanding vocals evoke the artistry of Ryan Beatty and Conan Gray, with an intimate lyricism uniquely his own. 
             The debut single “Shin Splints” follows Alex as he balances the future and the past, the real and the unreal. Willow, the forthcoming 

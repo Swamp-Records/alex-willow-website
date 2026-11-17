@@ -6,6 +6,12 @@
     import { shows } from "../data/showData";
     import ShowsBox from "../components/ShowsBox";
 
+    export const metadata = {
+        title: "Show Dates",
+        description:
+            "Upcoming live shows and tour dates for Gainesville artist Alex Willow.",
+    };
+
     export default function Shows(){
         return (
             <div className="relative min-h-screen">
@@ -23,7 +29,7 @@
                             <h1 className="text-white text-9xl" style={{fontSize:"6rem"}}>Upcoming</h1>
                         </div>
                     </div>
-                        <div >
+                        <div className="w-full max-w-4x1 px-4" >
                         {shows.map((show, i)=>(
                             <ShowsBox key={i} title={show.title} ticketLink={show.ticketLink} location={show.location} date={show.date}/>
                         ))}
