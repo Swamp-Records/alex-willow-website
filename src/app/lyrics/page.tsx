@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import LyricsHero from "../../../public/LyricsHero.png"
-import ShinyHeadshot from "../../../public/ShinyHeadshot.png"
+import LyricsHero from "../../../public/lyrics-tree.jpg"
+import ShinyHeadshot from "../../../public/adolescence-cover.jpg"
 import LyricsBox from "../components/LyricsBox";
 import { songs } from "../data/songData";
 
@@ -33,7 +33,7 @@ export default function Lyrics(){
                     <div className="flex flex-col max-md:w-full">
                         <Image
                             src = {ShinyHeadshot}
-                            alt="A shiny headshot!"
+                            alt="Adolescence single cover"
                             width={486}
                             height={486}
                             className="object-cover z-20 m-3 -mt-64 max-md:mx-0 max-md:w-full max-md:h-auto"

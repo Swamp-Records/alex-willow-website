@@ -1,28 +1,14 @@
 "use client";
 import Image from "next/image";
 
-const PRESAVE_URL = "https://distrokid.com/hyperfollow/alexwillow/adolescence";
-const RELEASE_DATE = new Date(2026, 10, 4); // months count from 0, so 10 = November
-
-// Works out how many days are left until release.
-function daysUntilRelease(): number {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  return Math.ceil((RELEASE_DATE.getTime() - today.getTime()) / 86_400_000);
-}
-
 export default function PresaveSection() {
-  const days = daysUntilRelease();
-  const isOut = days <= 0;
-  const countdown = isOut ? "Out now" : days === 1 ? "Out tomorrow" : `Out in ${days} days`;
-
   return (
     <section className="presave-section">
       <div className="presave-inner">
         <div className="cover-polaroid">
           <Image
-            src="/adolescence-cover.jpg"
-            alt="Adolescence cover art"
+            src="/tradition-cover.jpg"
+            alt="Tradition cover art"
             width={600}
             height={600}
             style={{ width: "100%", height: "auto" }}
@@ -31,14 +17,14 @@ export default function PresaveSection() {
 
         <div className="presave-text">
           <p className="presave-eyebrow">New single</p>
-          <h2 className="presave-title">Adolescence</h2>
+          <h2 className="presave-title">Tradition</h2>
           <p className="presave-date" suppressHydrationWarning>
-            {countdown} · November 4
+            Out now · November 18
           </p>
 
           <div className="presave-buttons">
-            <a className="presave-btn" href={PRESAVE_URL} target="_blank" rel="noopener noreferrer" suppressHydrationWarning>
-              {isOut ? "Listen now" : "Pre-save now"}
+            <a className="presave-btn" href="https://distrokid.com/hyperfollow/page/index.cfm?albumIdShortcut=tradition&artistNameShortcut=alexwillow" target="_blank" rel="noopener noreferrer" suppressHydrationWarning>
+              Listen now
             </a>
             <p className="presave-platforms">
               Spotify · Apple Music · YouTube · TikTok · Instagram
@@ -51,7 +37,7 @@ export default function PresaveSection() {
         .presave-section {
           position: relative;
           width: 100%;
-          background: #4F6A89;
+          background: #10284a;
           padding: 5rem 2rem;
           overflow: hidden;
         }
@@ -118,7 +104,7 @@ export default function PresaveSection() {
           padding: 0.9rem 1.5rem;
           border-radius: 9999px;
           background: #fff;
-          color: #4F6A89;
+          color: #10284a;
           font-weight: bold;
           text-decoration: none;
           border: 2px solid #fff;
@@ -132,7 +118,7 @@ export default function PresaveSection() {
         .presave-platforms {
           color: #D8D1C8;
           font-size: clamp(0.65rem, 2.8vw, 0.95rem);
-          white-space: nowrap;
+          white-space: normal;
           text-align: center;
           margin: 0;
         } 
@@ -144,7 +130,7 @@ export default function PresaveSection() {
 
         .presave-btn.secondary:hover {
           background: #fff;
-          color: #4F6A89;
+          color: #10284a;
         }
 
         @media (max-width: 768px) {

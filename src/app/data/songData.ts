@@ -6,6 +6,22 @@ export type Song = {
 
 export const songs: Song[] = [
     {
+        title: "Tradition",
+        album: "Tradition",
+        verses: [
+            ["Your mother loves tradition", "Your father wouldn't look at you the same", "You know I'd never ask you, to choose it"],
+            ["But I'll love you until you do", "—ooh, until you do"],
+            ["I've given up tradition", "You know I don't expect you to do the same,", "I know that you want children"],
+            ["Well, I can't give that to you", "—I can't give that to you"],
+            ["Run, run river boy,", "Down toward the sea", "You're much too good a thing,", "To be a part of me"],
+            ["Run, run river boy,", "Get out while you can,", "Before I make you think some things", "They wouldn't understand"],
+            ["Run, run river boy,", "If you want usual tastes,", "Cause I plan on living", "A life that they can't replicate"],
+            ["Your mother wants tradition"],
+            ["If you do too, I won't blame you", "—I won't blame you"],
+            ["Oh, oh", "Oh, oh"],
+        ],
+    },
+    {
         title: "Adolescence",
         album: "Adolescence",
         verses: [

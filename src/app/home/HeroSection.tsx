@@ -47,7 +47,7 @@ export default function HeroSection() {
         .hero-bg {
           position: absolute;
           inset: 0;
-          background-image: url('homepage-background.jpg');
+          background-image: url('hero-sunset.jpg');
           background-size: cover;
           background-position: center 30%;
           filter: brightness(0.5) saturate(0.65);
@@ -120,7 +120,7 @@ export default function HeroSection() {
         .polaroid-photo-left {
           width: 100%;
           aspect-ratio: 1 / 1.05;
-          background: url('candid.jpg');
+          background: url('hero-polaroid-field.jpg');
           background-size: cover;
           background-position: center;
           display: block;
@@ -129,7 +129,7 @@ export default function HeroSection() {
         .polaroid-photo-center {
           width: 100%;
           aspect-ratio: 1 / 1.05;
-          background: url('alex-headshot.jpg');
+          background: url('hero-polaroid-tree.jpg');
           background-size: cover;
           background-position: center;
           display: block;
@@ -138,7 +138,7 @@ export default function HeroSection() {
         .polaroid-photo-right {
           width: 100%;
           aspect-ratio: 1 / 1.05;
-          background: url('coop-and-alex.jpg');
+          background: url('hero-polaroid-portrait.jpg');
           background-size: cover;
           background-position: center;
           display: block;

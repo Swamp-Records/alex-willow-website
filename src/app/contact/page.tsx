@@ -39,13 +39,13 @@ export default function ContactForm() {
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-[#0a192f]"> 
       
-      {/* Background layer */}
-      <div 
-        className="fixed inset-0 z-0 w-full h-full pointer-events-none bg-[url('/contact_background.png')] bg-cover bg-center bg-no-repeat"
-        aria-hidden="true"
-      >
+      {/* Photo collage inspired by the artist's design */}
+      <div className="contact-collage" aria-hidden="true">
+        <div className="contact-photo contact-photo-one" />
+        <div className="contact-photo contact-photo-two" />
+        <div className="contact-photo contact-photo-three" />
+        <div className="contact-photo contact-photo-four" />
       </div>
-
       {/* Contact form */}
       <section className="relative z-10 flex flex-col items-center w-full py-20 px-4 mt-8 md:mt-16">
         <div className="flex flex-col items-center w-full mb-8">
@@ -86,6 +86,21 @@ export default function ContactForm() {
           {status === "error" && <p className="mt-2 text-center text-red-400 font-medium">{message}</p>}
         </form>
       </section>
+      <style jsx>{`
+        .contact-collage { position: fixed; inset: 0; display: grid; grid-template-columns: 29% 43% 28%; grid-template-rows: 48% 52%; background: #263b50; }
+        .contact-photo { background-size: cover; background-position: center; }
+        .contact-photo-one { grid-row: 1 / 3; background-image: url('/gallery-tree.jpg'); }
+        .contact-photo-two { background-image: url('/shows-tree.jpg'); }
+        .contact-photo-three { background-image: url('/gallery-sunset.jpg'); }
+        .contact-photo-four { grid-column: 2 / 4; background-image: url('/contact-field.jpg'); }
+        .contact-collage::after { content: ''; position: absolute; inset: 0; background: rgba(7, 16, 27, .6); }
+        @media (max-width: 600px) {
+          .contact-collage { grid-template-columns: 1fr 1fr; grid-template-rows: 45% 55%; }
+          .contact-photo-one { grid-row: 1; }
+          .contact-photo-three { display: none; }
+          .contact-photo-four { grid-column: 1 / 3; }
+        }
+      `}</style>
     </main>
   );
 }
