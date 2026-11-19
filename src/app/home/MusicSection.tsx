@@ -1,10 +1,20 @@
 "use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Spotify from "../../../public/Spotify-blue.svg";
 import Youtube from "../../../public/Youtube-blue.svg";
 
 export default function MusicSection() {
+  const [motionAllowed, setMotionAllowed] = useState(false);
+
+  useEffect(() => {
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setMotionAllowed(!preference.matches);
+    update();
+    preference.addEventListener("change", update);
+    return () => preference.removeEventListener("change", update);
+  }, []);
   return (
     <section className="music-section">
 
@@ -51,6 +61,20 @@ export default function MusicSection() {
                                 style={{ width: "100%", height: "auto" }}
                                 priority
                             />
+                            {motionAllowed && (
+                                <video
+                                    className="ipod-video"
+                                    src="/ipod-warm-motion.mp4"
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    preload="none"
+                                    aria-hidden="true"
+                                    onCanPlay={(event) => { event.currentTarget.style.visibility = "visible"; }}
+                                    onError={(event) => { event.currentTarget.style.display = "none"; }}
+                                />
+                            )}
                         </Link>
                     </div>
 
@@ -126,6 +150,18 @@ export default function MusicSection() {
                 z-index: 2;
             }
 
+            .ipod-video {
+                position: absolute;
+                left: 28.4%;
+                top: 11.3%;
+                width: 57%;
+                height: 35%;
+                object-fit: cover;
+                transform: rotate(12deg);
+                border-radius: 2%;
+                pointer-events: none;
+                visibility: hidden;
+            }
             .ipod-wrapper:hover {
                 transform: scale(1.05) rotate(3deg);
                 transition: transform 0.3s ease-in-out;

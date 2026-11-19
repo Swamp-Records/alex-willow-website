@@ -9,7 +9,7 @@ export default function HeroSection() {
 
       {/* Hero content */}
       <div className="hero-content">
-        <h1 className="hero-title">Alex Willow.</h1>
+        <h1 className="hero-title"><Image src="/alex-willow-wordmark.svg" alt="Alex Willow" width={612} height={180} priority style={{ width: "100%", height: "auto" }} /></h1>
 
         {/* Polaroid cluster with overlapping + floating logo */}
         <div className="polaroid-cluster">
@@ -69,12 +69,10 @@ export default function HeroSection() {
 
         /* TITLE */
         .hero-title {
-          font-family: "Lavishly Yours";
-          font-size: clamp(60px, 10vw, 160px);
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-          text-align: center;
+          width: min(612px, 85vw);
+          margin: 0;
+          padding: 4rem 0 1rem;
+          filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
         }
 
         /* POLAROID CLUSTER */

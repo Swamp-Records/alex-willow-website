@@ -27,7 +27,15 @@ export default function PresaveSection() {
               Listen now
             </a>
             <p className="presave-platforms">
-              Spotify · Apple Music · YouTube · TikTok · Instagram
+              <a href="https://open.spotify.com/artist/73etH0gcHNOnWLXD0Rbamb" target="_blank" rel="noopener noreferrer">Spotify</a>
+              <span aria-hidden="true"> · </span>
+              <a href="https://music.apple.com/us/artist/alex-willow/1838191257" target="_blank" rel="noopener noreferrer">Apple Music</a>
+              <span aria-hidden="true"> · </span>
+              <a href="https://www.youtube.com/@alex.willow" target="_blank" rel="noopener noreferrer">YouTube</a>
+              <span aria-hidden="true"> · </span>
+              <a href="https://www.tiktok.com/@alexwillowmusic" target="_blank" rel="noopener noreferrer">TikTok</a>
+              <span aria-hidden="true"> · </span>
+              <a href="https://www.instagram.com/alexwillowmusic/" target="_blank" rel="noopener noreferrer">Instagram</a>
             </p>
           </div>
         </div>
@@ -123,6 +131,16 @@ export default function PresaveSection() {
           margin: 0;
         } 
 
+        .presave-platforms a {
+          color: inherit;
+          text-decoration: underline;
+          text-underline-offset: 0.2em;
+        }
+
+        .presave-platforms a:hover,
+        .presave-platforms a:focus-visible {
+          color: #fff;
+        }
         .presave-btn.secondary {
           background: transparent;
           color: #fff;

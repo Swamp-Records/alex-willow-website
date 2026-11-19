@@ -187,17 +187,15 @@ export default function EPK() {
           </div>
 
           <div className="other-songs">
-            {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="song-card">
-                <div className="song-icons">
-                  <Link href="https://open.spotify.com/artist/73etH0gcHNOnWLXD0Rbamb" target="_blank">
-                    <Image src={SpotifyBlueSVG} height={40} width={40} alt="Spotify" />
-                  </Link>
-                  <Link href="https://www.youtube.com/@alex.willow" target="_blank">
-                    <Image src={YoutubeBlueSVG} height={40} width={40} alt="Youtube" />
-                  </Link>
-                </div>
-              </div>
+            {[
+              { title: "Tradition", cover: "/tradition-cover.jpg", href: "https://distrokid.com/hyperfollow/page/index.cfm?albumIdShortcut=tradition&artistNameShortcut=alexwillow" },
+              { title: "Adolescence", cover: "/adolescence-cover.jpg", href: "https://distrokid.com/hyperfollow/alexwillow/adolescence" },
+            ].map(({ title, cover, href }) => (
+              <Link key={title} href={href} target="_blank" rel="noopener noreferrer" className="release-card" aria-label={`Listen to ${title}`}>
+                <Image src={cover} alt={`${title} cover art`} width={400} height={400} style={{ width: "100%", height: "auto" }} />
+                <span className="release-title">{title}</span>
+                <span className="release-action">Listen now</span>
+              </Link>
             ))}
           </div>
         </div>
@@ -564,22 +562,34 @@ export default function EPK() {
           margin-top: 60px;
         }
 
-        .song-card {
-          background: #676767;
-          border: 3px solid #50749F;
-          width: 240px;
-          height: 190px;
-          position: relative;
+        .other-songs :global(.release-card) {
           display: flex;
-          align-items: flex-start;
-          justify-content: flex-end;
-          padding: 12px;
+          flex-direction: column;
+          width: 100%;
+          min-width: 0;
+          padding: 8px 8px 14px;
+          background: #f5efe0;
+          color: #263b50;
+          text-decoration: none;
+          box-shadow: 3px 5px 14px rgba(0,0,0,.22);
+          transition: transform .2s ease;
         }
 
-        .song-icons {
-          display: flex;
-          gap: 10px;
-          align-items: center;
+        .other-songs :global(.release-card:hover),
+        .other-songs :global(.release-card:focus-visible) {
+          transform: translateY(-4px);
+        }
+
+        .release-title {
+          margin-top: 10px;
+          font-size: 1.25rem;
+          line-height: 1.2;
+        }
+
+        .release-action {
+          margin-top: 4px;
+          font-size: .9rem;
+          text-decoration: underline;
         }
 
         .epk-socials {
@@ -609,7 +619,7 @@ export default function EPK() {
           }
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1100px) {
           .epk-hero {
             height: 500px;
           }
