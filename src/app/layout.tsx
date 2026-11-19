@@ -37,6 +37,7 @@ const kurale = Kurale({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://alexwillowmusic.com"),
+  icons: { icon: { url: "/AlexWillow_Favicon.svg", type: "image/svg+xml" } },
   title: {
     default: "Alex Willow | Gainesville Music Artist",
     template: "%s | Alex Willow",
