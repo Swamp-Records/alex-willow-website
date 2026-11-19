@@ -173,7 +173,7 @@ export default function MusicSection() {
                 
                 .stream-card {
                     min-height: 350px;
-                    min-width:350px;
+                    width: min(350px, calc(100vw - 4rem));
                 }
 
                 .ipod-wrapper {

@@ -116,12 +116,12 @@ export default function EPK() {
           </div>
           <div className="deco-polaroid deco-polaroid--neg">
             <div className="polaroid-inner">
-              <div className="polaroid-photo" style={{ backgroundImage: "url('/coop-and-alex.jpg')" }} />
+              <div className="polaroid-photo" style={{ backgroundImage: "url('/hero-polaroid-tree.jpg')" }} />
             </div>
           </div>
           <div className="deco-polaroid deco-polaroid--pos">
             <div className="polaroid-inner">
-              <div className="polaroid-photo" style={{ backgroundImage: "url('/alex-headshot.jpg')" }} />
+              <div className="polaroid-photo" style={{ backgroundImage: "url('/gallery-tree.jpg')" }} />
             </div>
           </div>
         </div>
@@ -135,10 +135,10 @@ export default function EPK() {
 
         <div className="gallery-row">
           {[
-            { src: "/candid.jpg",        rot: -2.97 },
-            { src: "/alex-headshot.jpg", rot:  4.54 },
-            { src: "/coop-and-alex.jpg", rot: -1.22 },
-            { src: "/AW18.jpg",          rot: -1.22 },
+            { src: "/gallery-sunset.jpg",        rot: -2.97 },
+            { src: "/gallery-tree.jpg", rot:  4.54 },
+            { src: "/hero-polaroid-tree.jpg", rot: -1.22 },
+            { src: "/gallery-portrait.jpg",          rot: -1.22 },
           ].map(({ src, rot }, i) => (
             <div
               key={i}
@@ -252,7 +252,7 @@ export default function EPK() {
         .hero-bg {
           position: absolute;
           inset: 0;
-          background-image: url('/paws.png');
+          background-image: url('/epk-field.jpg');
           background-size: cover;
           background-position: center top;
           z-index: 0;

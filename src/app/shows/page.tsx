@@ -1,6 +1,6 @@
     import Image from "next/image";
 
-    import ShowsHero from "../../../public/ShowsHero.png"
+    import ShowsHero from "../../../public/shows-tree.jpg"
     import { getShows } from "../data/showData";
     import ShowsBox from "../components/ShowsBox";
 
@@ -24,7 +24,7 @@
                             src={ShowsHero}
                             alt="Dreamy image of Alex Willow"
                             fill
-                            className="object-cover z-0"
+                            className="object-cover z-0 brightness-50"
                         />
                         <div className="relative z-20">
                             <h1 className="text-white text-9xl" style={{fontSize:"6rem"}}>Upcoming</h1>
